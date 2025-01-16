@@ -22,9 +22,8 @@ header {
     background-color: var(--primary-color);
     height: 56px;
 }
-header .nav-container{
+header .nav-container {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     height: 100%;
     max-width: 1248px;
@@ -35,7 +34,7 @@ header .nav-container .logo {
     min-width: 137px;
     justify-content: flex-end;
 }
-header .nav-container .logo img{
+header .nav-container .logo img {
     width: 75px;
 }
 
@@ -45,11 +44,11 @@ header .search {
     align-items: center;
     margin-left: 12px;
 }
-header .search .search-container{
+header .search .search-container {
     width: 540px;
     height: 36px;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
     display: flex;
 }
@@ -74,6 +73,7 @@ header .search .search-container button {
 
 header .login {
     height: 100%;
+    font-weight: bold;
     display: flex;
     align-items: center;
     margin: 0 20px;
@@ -95,7 +95,7 @@ header .become-seller {
     font-weight: 500;
 }
 
-header .more{
+header .more {
     height: 100%;
     display: flex;
     align-items: center;
@@ -127,29 +127,31 @@ header .cart svg {
     background-color: white;
     box-shadow: 0 1px 1px 0 rgb(0 0 0 / 16%);
 }
-.section-1-container{
+.section-1-container {
     width: 1280px;
     margin: 0 auto;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-
 }
-.section-1-item{
+.section-1-item {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 500;
+    gap: 8px;
+    text-align: center;
 }
 .section-1-item img {
     width: 64px;
     height: 64px;
+    object-fit: contain;
+}
+
+.section-1-item img:hover {
+    transform: scale(1.1);
 }
 
 /* section 2 */
@@ -174,86 +176,173 @@ header .cart svg {
 
 /* section 4 */
 .section-4-container {
-    height: 100%;
+    height: 350px;
     margin-top: 8px;
-    height: 362px;
     background-color: white;
     display: flex;
     justify-content: space-between;
+    position: relative;
     align-items: center;
 }
-.section-4-offers {
-    width: 230px;
-    height: 100%;
-    background-image: url('https://rukminim1.flixcart.com/fk-p-flap/278/278/image/1e483f8045ec13a8.jpg?q=90');
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
-.section-4-offers-viewall{
-    margin-top: 132px;
-    width: 100%;
+
+.section-4-left {
+    position: absolute;
+    top: 10px;
+    left: 16px;
     font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-weight: bold;
+    text-align: center;
 }
-.section-4-offers-viewall button {
-    margin-top: 24px;
-    height: 40px;
-    background-color: var(--primary-color);
+
+.section-4-right {
+    position:absolute;
+    top: 10px;
+    right: 350px;
+    z-index: 1;
+}
+
+.section-4-right button {
+    background-color: #2874f1;
     color: white;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    font-weight: bold;
+    font-size: 15px;
     padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     cursor: pointer;
 }
-.section-4-list {
-    height: 100%;
-    width: calc(100% - 230px);
+
+/* Center content */
+.section-4-center {
     display: flex;
-    overflow-x: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding-top: 60px;
 }
-.section-4-item{
-    width: 232px;
-    height: 100%;
-    padding: 0px 15px;
+
+/* List of items with scroll snap */
+.section-4-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.section-4-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 200px;
+    max-width: 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    text-align: center;
 }
+
 .section-4-item img {
-    max-width: 200px;
+    width: 160px;
+    height: 160px;
     max-height: 200px;
+    object-fit: contain;
 }
-.section-4-item-head{
+
+.section-4-item img:hover {
+    transform: scale(1.1);
+}
+
+.section-4-item-head {
     margin-top: 16px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
+
 .section-4-item-price {
     margin-top: 12px;
     font-size: 16px;
     color: #388e3c;
 }
-.section-4-item-explore{
+
+.section-4-item-explore {
     opacity: 0.6;
     margin-top: 12px;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-/* section-5 */
-.section-5 {
-    margin-top: 8px ;
+.best-selling {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: black
+}
+
+/* section 5 */
+.section-5-container {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
-.section-5 img {
+
+.section-5-item {
+    width: 30%;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section-5-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.section-5-item img:hover {
+    transform: scale(1.1);
+}
+
+.section-5-item-head {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.section-5-item-price {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.section-5-item-explore {
+    color: #2874f1;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.section-5-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* section-6 */
+.section-6 {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.section-6 img {
     width: 33%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* footer */
@@ -263,5 +352,5 @@ footer {
     padding: 25px;
     text-align: center;
     font-size: 14px;
-    color: #878787 ;
+    color: #878787;
 }
